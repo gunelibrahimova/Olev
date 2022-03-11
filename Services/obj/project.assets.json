@@ -718,6 +718,16 @@
         "runtime": {
           "bin/placeholder/Entities.dll": {}
         }
+      },
+      "Helper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Helper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Helper.dll": {}
+        }
       }
     }
   },
@@ -2039,12 +2049,18 @@
       "type": "project",
       "path": "../Entities/Entities.csproj",
       "msbuildProject": "../Entities/Entities.csproj"
+    },
+    "Helper/1.0.0": {
+      "type": "project",
+      "path": "../Helper/Helper.csproj",
+      "msbuildProject": "../Helper/Helper.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "DataAccess >= 1.0.0",
-      "Entities >= 1.0.0"
+      "Entities >= 1.0.0",
+      "Helper >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2084,6 +2100,9 @@
             },
             "C:\\Users\\HP\\Desktop\\Tasks\\K205Oleev\\Entities\\Entities.csproj": {
               "projectPath": "C:\\Users\\HP\\Desktop\\Tasks\\K205Oleev\\Entities\\Entities.csproj"
+            },
+            "C:\\Users\\HP\\Desktop\\Tasks\\K205Oleev\\Helper\\Helper.csproj": {
+              "projectPath": "C:\\Users\\HP\\Desktop\\Tasks\\K205Oleev\\Helper\\Helper.csproj"
             }
           }
         }

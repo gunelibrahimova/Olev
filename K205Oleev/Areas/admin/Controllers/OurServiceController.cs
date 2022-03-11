@@ -47,42 +47,39 @@ namespace K205Oleev.Areas.admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            //EditVM editVM = new()
-            //{
-            //    ourServiceLanguages = _context.ourServiceLanguages.Include(x => x.OurServices).Where(x => x.OurServiceID == id).ToList(),
-            //    OurService = _context.services.FirstOrDefault(x => x.Id == id),
-            //};
+            EditVM editVM = new()
+            {
+                ourServiceLanguages = _services.GetById(id),
+                OurService = _services.GetServiceById(id)
+            };
 
-            //return View(editVM);
-            return null;
+            return View(editVM);
+
         }
 
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int OurServiceID, List<int> LangID, List<string> Title, List<string> Description, List<string> LangCode, string PhotoURL)
+        public async Task<IActionResult> Edit(OurService ourService,int OurServiceID, List<int> LangID, List<string> Title, List<string> Description, List<string> LangCode, string PhotoURL, string IconURL, IFormFile Image, string OldPhoto)
         {
-            //for (int i = 0; i < Title.Count; i++)
-            //{
-            //    SEO seo = new();
-            //    OurServiceLanguage ourServiceLanguage = new()
-            //    {
+            if (Image != null)
+            {
+                string path = "/files/" + Guid.NewGuid() + Image.FileName;
+                using (var fileStream = new FileStream(_environment.WebRootPath + path, FileMode.Create))
+                {
+                    await Image.CopyToAsync(fileStream);
+                }
 
-            //        Id = LangID[i],
-            //        Title = Title[i],
-            //        Description = Description[i],
-            //        SEO = seo.SeoURL(Title[i]),
-            //        LangCode = LangCode[i],
-            //        OurServiceID = OurServiceID
+                for (int i = 0; i < Title.Count; i++)
+                {
+                    _services.EditService(ourService, OurServiceID, LangID[i], Title[i], Description[i], LangCode[i], path, IconURL);
+                }
 
-            //    };
-
-            //    var updateEntity = _context.Entry(ourServiceLanguage);
-            //    updateEntity.State = EntityState.Modified;
-
-
-
-            //}
-            //_context.SaveChanges();
+                ourService.PhotoURL = path;
+            }
+            else
+            {
+                ourService.PhotoURL = OldPhoto;
+            }
 
 
             return RedirectToAction(nameof(Index));

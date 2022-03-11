@@ -1,5 +1,6 @@
 ﻿using DataAccess;
 using Entities;
+using Helper.Methods;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -48,5 +49,52 @@ namespace Services
 
             _context.SaveChanges();
         }
+
+        public List<InfoLanguage> GetById(int id)
+        {
+            return _context.infoLanguages.Where(x => x.InfoID == id).ToList();
+        }
+
+        public Info GetInfoById(int id)
+        {
+            return _context.infos.FirstOrDefault(x => x.Id == id);
+        }
+
+        public void EditInfoList(Info info, InfoLanguage infoLanguage)
+        {
+            infoLanguage.SEO = "asdfg";
+            info.PhotoURL = "asdfg";
+            _context.infoLanguages.Update(infoLanguage);
+            _context.infos.Update(info);
+            _context.SaveChanges();
+        }
+
+        public void EditInfo(Info info, int InfoID, int LangID, string Title, string Description, string LangCode, string PhotoURL)
+        {
+            SEO seo = new();
+
+            info.PhotoURL = PhotoURL;
+
+
+
+            _context.infos.Update(info);
+
+
+
+            InfoLanguage infoLanguage = new()
+            {
+                Id = LangID,
+                Title = Title,
+                Description = Description,
+                SEO = seo.SeoURL(Title),
+                LangCode = LangCode,
+                InfoID = InfoID
+            };
+            var updatedEntity = _context.Entry(infoLanguage);
+            updatedEntity.State = EntityState.Modified;
+            _context.SaveChanges();
+        }
+
+
     }
 }

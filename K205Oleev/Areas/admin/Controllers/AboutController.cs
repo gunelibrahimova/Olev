@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Services;
 
+
 namespace K205Oleev.Areas.admin.Controllers
 {
     [Area("admin")]
@@ -25,7 +26,21 @@ namespace K205Oleev.Areas.admin.Controllers
 
         public IActionResult Index()
         {
-            var about = _services.GetAll();
+            var langCode = Request.Cookies["Language"];
+            var about = _services.GetAll(langCode);
+
+
+            if(about != null)
+            {
+                ViewBag.Sayi = 1;
+            }
+
+            else
+            {
+                ViewBag.Sayi = 0;
+
+            }
+
             return View(about);
         }
 
@@ -35,12 +50,14 @@ namespace K205Oleev.Areas.admin.Controllers
             return View();
 
         }
+
         [HttpPost]
-        public IActionResult Create(List<string> Title, List<string> Description, List<string> LangCode, List<string> SEO, string PhotoURL)
+        public IActionResult Create( About about,List<string> Title, List<string> Description, List<string> LangCode, List<string> SEO, string PhotoURL)
         {
+            _services.Ccreate(about);
             for (int i = 0; i < Title.Count ; i++)
             {
-                _services.CreateAbout(Title[i], Description[i], LangCode[i], SEO[i], PhotoURL);
+                _services.CreateAbout(about.Id, Title[i], Description[i], LangCode[i], SEO[i], PhotoURL);
             }
 
             return RedirectToAction(nameof(Index));
@@ -49,80 +66,40 @@ namespace K205Oleev.Areas.admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int? id)
         {
-            //EditVM editVM = new()
-            //{
-            //   aboutLanguages = _context.aboutLanguages.Include(x => x.About).Where(x => x.AboutID == id).ToList(),
-            //   About = _context.abouts.FirstOrDefault(x=> x.Id == id.Value)
+            EditVM editVM = new()
+            {
+                aboutLanguages = _services.GetById(id.Value),
+                About = _services.GetAboutById(id.Value)
+            };
+            return View(editVM);
 
-            //};
-
-
-            //return View(editVM);
-            return null;
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> Edit(About about, IFormFile Image, string OldPhoto)
-        //{
-
-        //    if (Image != null)
-        //    {
-        //        string path = "/files/" + Guid.NewGuid() + Image.FileName;
-        //        using (var fileStream = new FileStream(_environment.WebRootPath + path, FileMode.Create))
-        //        {
-        //            await Image.CopyToAsync(fileStream);
-        //        }
-        //        about.PhotoURL = path;
-        //    }
-        //    else
-        //    {
-        //        about.PhotoURL = OldPhoto;
-        //    }
-
-
-        //    try
-        //    {
-        //        _context.Update(about);
-        //        _context.SaveChanges();
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return RedirectToAction(nameof(Index));
-        //}
-
-
-
-        [HttpPost] 
-        public async Task<IActionResult> Edit( int AboutID, List<int> LangID, List<string> Title, List<string> Description,List<string> LangCode , string PhotoURL)
+        [HttpPost]
+        public async Task<IActionResult> Edit(About about,int AboutID, List<int> LangID, List<string> Title, List<string> Description, List<string> LangCode, string PhotoURL, IFormFile Image, string OldPhoto)
         {
-            //for (int i = 0; i < Title.Count; i++)
-            //{
-            //    SEO seo = new();
-            //    AboutLanguage aboutLanguage = new()
-            //    {
+            
+            if(Image != null)
+            {
+                string path = "/files/" + Guid.NewGuid() + Image.FileName;
+                using (var fileStream = new FileStream(_environment.WebRootPath + path, FileMode.Create))
+                {
+                    await Image.CopyToAsync(fileStream);
+                }
 
-            //        Id = LangID[i],
-            //        Title = Title[i],
-            //        Description = Description[i],
-            //        SEO = seo.SeoURL(Title[i]),
-            //        LangCode = LangCode[i],
-            //        AboutID = AboutID
+                for (int i = 0; i < Title.Count; i++)
+                {
+                    _services.EditAbout(about, AboutID, LangID[i], Title[i], Description[i], LangCode[i], path);
+                }
 
-            //    };
-
-            //    var updateEntity = _context.Entry(aboutLanguage);
-            //    updateEntity.State = EntityState.Modified;
-
-
-
-            //}
-            //_context.SaveChanges();
-
-
-            //return RedirectToAction(nameof(Index));
-            return null;
+                about.PhotoURL = path;
+            }
+            else
+            {
+                about.PhotoURL = OldPhoto;
+            }
+            //_services.EditAboutList(about, aboutLanguage);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

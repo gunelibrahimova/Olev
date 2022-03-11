@@ -1,4 +1,7 @@
-﻿@{
+﻿@model HomeVM
+
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -98,10 +101,16 @@
         <!-- Start About Area -->
         <div class="about-area ptb-100">
             <div class="container">
+
+                @foreach (var item in Model.AboutLanguages)
+                {
+                    
+
                 <div class="row align-items-center justify-content-center">
+
                     <div class="col-lg-6 col-md-12" data-aos="fade-right" data-aos-delay="50" data-aos-duration="500" data-aos-once="true">
                         <div class="about-image">
-                            <img src="assets/images/about/about-1.png" alt="Oleev">
+                            <img src="@item.About.PhotoURL" alt="Oleev">
 
                             <div class="about-shape-1" data-speed="0.08" data-revert="true">
                                 <img src="assets/images/about/shape-1.png" alt="Oleev">
@@ -109,18 +118,25 @@
                         </div>
                     </div>
 
+
+
+
                     <div class="col-lg-6 col-md-12" data-aos="fade-left" data-aos-delay="50" data-aos-duration="500" data-aos-once="true">
                         <div class="about-content">
                             <span>About Our Company</span>
-                            <h3>Best Award Winning Creative Agency Shape Of Perfect Solution</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit et fames maecenas amet est scelerisque lectus tortor sit lorem ipsum dolor sit amet consectetur adipiscing elit et fames maecenas amet est scelerisque lectus tortor sit.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit et fames maecenas amet est scelerisque lectus tortor sit lorem ipsum dolor lorem ipsum dolor sit amet consectetur adipiscing elit et fames maecenas amet est scelerisque lectus tortor sit lorem ipsum dolor lorem ipsum dolor sit amet consectetur adipiscing elit et fames maecenas amet est.</p>
+                            <h3>@item.Title</h3>
+                            <p>@Html.Raw(item.Description)</p>
                             <div class="about-btn">
                                 <a href="about-one.html" class="default-btn">Learn More</a>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                }
+
+
+
             </div>
 
             <div class="about-shape-2" data-speed="0.08" data-revert="true">

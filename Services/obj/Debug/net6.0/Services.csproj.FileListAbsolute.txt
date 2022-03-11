@@ -15,3 +15,5 @@ C:\Users\HP\Desktop\Tasks\K205Oleev\Services\bin\Debug\net6.0\DataAccess.pdb
 C:\Users\HP\Desktop\Tasks\K205Oleev\Services\bin\Debug\net6.0\Entities.pdb
 C:\Users\HP\Desktop\Tasks\K205Oleev\Services\obj\Debug\net6.0\Services.csproj.AssemblyReference.cache
 C:\Users\HP\Desktop\Tasks\K205Oleev\Services\obj\Debug\net6.0\Services.csproj.CopyComplete
+C:\Users\HP\Desktop\Tasks\K205Oleev\Services\bin\Debug\net6.0\Helper.dll
+C:\Users\HP\Desktop\Tasks\K205Oleev\Services\bin\Debug\net6.0\Helper.pdb

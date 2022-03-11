@@ -1,9 +1,9 @@
-﻿@model List<AboutLanguage>
+﻿@model List<İnfoLanguage>
 
 <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary"><a asp-action="create">Create</a></h6>
+                            <h6 class="m-0 font-weight-bold text-primary"><a id="@(ViewBag.Sayi == 1? "myBtn" : null)" asp-action="create">Create</a></h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -59,3 +59,20 @@
                             </div>
                         </div>
                     </div>
+
+
+@section Scripts{
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        var button = document.getElementById("myBtn")
+        button.addEventListener("click" , function(e){
+            e.preventDefault()
+            e.stopPropagation()
+            Swal.fire(
+  'The Internet?',
+  'That thing is still around?',
+  'question'
+)
+        })
+    </script>
+} 

@@ -14,7 +14,13 @@ builder.Services.AddScoped<AboutServices>();
 builder.Services.AddScoped<InfoServices>();
 builder.Services.AddScoped<CountDownServices>();
 builder.Services.AddScoped<OurServiceServices>();
-
+builder.Services.AddScoped<ProductServices>();
+builder.Services.AddScoped<StudyServices>();
+builder.Services.AddScoped<CaseServices>();
+builder.Services.AddScoped<ChooseServices>();
+builder.Services.AddScoped<ExpertiseServices>();
+builder.Services.AddScoped<ArticleServices>();
+builder.Services.AddScoped<TeamServices>();
 
 
 

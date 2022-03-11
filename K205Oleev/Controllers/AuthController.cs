@@ -46,5 +46,27 @@ namespace K205Oleev.Controllers
             }
             return View();
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Login()
+        {
+            return View();
+        }
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginVM loginVM)
+        {
+            var user = await _userManager.FindByEmailAsync(loginVM.Email);
+            if (user == null) return View();
+            Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, false,false);
+            if (!result.Succeeded)
+            {
+                return RedirectToAction(nameof(Login));
+            }
+
+            return RedirectToAction("Index" , "Home");
+        }
     }
 }

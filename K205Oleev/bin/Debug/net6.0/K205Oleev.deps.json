@@ -2357,7 +2357,8 @@
       "Services/1.0.0": {
         "dependencies": {
           "DataAccess": "1.0.0",
-          "Entities": "1.0.0"
+          "Entities": "1.0.0",
+          "Helper": "1.0.0"
         },
         "runtime": {
           "Services.dll": {}

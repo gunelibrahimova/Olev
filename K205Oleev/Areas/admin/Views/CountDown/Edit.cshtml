@@ -7,6 +7,7 @@
     var count = 1;
 
 }
+
 <form method="post" enctype="multipart/form-data">
     <input type="hidden" name="CountDownID" value=@Model.CountDown.Id />
 
@@ -31,7 +32,6 @@
                         <div class="tab-pane fade @(count == 1? "show active" : null) " id="home-@count" role="tabpanel" aria-labelledby="home-tab">
                             <p>Title</p>
                             <input class="form-control mb-2" name="Title" value="@item.Title" />
-                            <p>Description</p>
                             <input type="hidden" name="LangCode" value="@item.LangCode" />
                             <input type="hidden" name="LangID" value=@item.Id />
 
@@ -39,28 +39,21 @@
                         count++;
                     }
 
+                            <input class="form-control mb-2" name="Title" value="@Model.CountDown.Count" />
 
                 </div>
-            </div>
-
-            <div class="card p-3 mt-3">
-                <input class="btn btn-primary btn-sm" type="submit" value="Edit" />
-
             </div>
         </div>
 
         <div class="col-lg-4">
-            
-            
-            
+            <div class="card p-3 mt-3">
+                <input class="btn btn-primary btn-sm" type="submit" value="Edit" />
+
+            </div>
 
         </div>
     </div>
 </form>
-
-
-
-
 
 
 

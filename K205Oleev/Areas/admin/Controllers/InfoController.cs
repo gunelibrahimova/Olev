@@ -14,10 +14,13 @@ namespace K205Oleev.Areas.admin.Controllers
     public class InfoController : Controller
     {
         private readonly InfoServices _services;
+        private IWebHostEnvironment _environment;
 
-        public InfoController(InfoServices services)
+
+        public InfoController(InfoServices services, IWebHostEnvironment environment)
         {
             _services = services;
+            _environment = environment;
         }
 
         public IActionResult Index()
@@ -45,40 +48,40 @@ namespace K205Oleev.Areas.admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int? id)
         {
-            //EditVM editVM = new()
-            //{
-            //    infoLanguages = _context.infoLanguages.Include(x => x.Info).Where(x => x.InfoID == id).ToList(),
-            //    Info = _context.infos.FirstOrDefault(x => x.Id == id.Value)
+            EditVM editVM = new()
+            {
 
-            //};
-            //return View(editVM);
-            return null;
+                infoLanguages = _services.GetById(id.Value),
+                Info = _services.GetInfoById(id.Value)
+
+            };
+            return View(editVM);
+
         }
+
         [HttpPost]
-        public async Task<IActionResult> Edit(int InfoID, List<int> LangID, List<string> Title, List<string> Description, List<string> LangCode, string PhotoURL)
+        public async Task<IActionResult> Edit(Info info,int InfoID, List<int> LangID, List<string> Title, List<string> Description,  List<string> LangCode, string PhotoURL, IFormFile Image , string OldPhoto)
         {
-            //for (int i = 0; i < Title.Count; i++)
-            //{
-            //    SEO seo = new();
-            //    InfoLanguage infoLanguage = new()
-            //    {
+            if (Image != null)
+            {
+                string path = "/files/" + Guid.NewGuid() + Image.FileName;
+                using (var fileStream = new FileStream(_environment.WebRootPath + path, FileMode.Create))
+                {
+                    await Image.CopyToAsync(fileStream);
+                }
 
-            //        Id = LangID[i],
-            //        Title = Title[i],
-            //        Description = Description[i],
-            //        SEO = seo.SeoURL(Title[i]),
-            //        LangCode = LangCode[i],
-            //        InfoID = InfoID
+                for (int i = 0; i < Title.Count; i++)
+                {
+                    _services.EditInfo(info, InfoID, LangID[i], Title[i], Description[i], LangCode[i], path);
+                }
 
-            //    };
+                info.PhotoURL = path;
+            }
 
-            //    var updateEntity = _context.Entry(infoLanguage);
-            //    updateEntity.State = EntityState.Modified;
-
-
-
-            //}
-            //_context.SaveChanges();
+            else
+            {
+                info.PhotoURL = OldPhoto;
+            }
 
 
             return RedirectToAction(nameof(Index));
