@@ -12,12 +12,10 @@ namespace K205Oleev.Areas.admin.Controllers
     public class CountDownController : Controller
     {
         private readonly CountDownServices _services;
-        private readonly IHostEnvironment _environment;
 
-        public CountDownController(CountDownServices services, IHostEnvironment environment)
+        public CountDownController(CountDownServices services)
         {
             _services = services;
-            _environment = environment;
         }
         public IActionResult Index()
         {
@@ -31,11 +29,12 @@ namespace K205Oleev.Areas.admin.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(List<string> Title, List<string> LangCode, List<string> SEO, int Count)
+        public IActionResult Create( CountDown countDown,List<string> Title, List<string> LangCode, List<string> SEO, int Count)
         {
+            _services.Ccreate(countDown);
             for (int i = 0; i < Title.Count; i++)
             {
-                _services.CreateCountDown(Title[i], LangCode[i], SEO[i], Count);
+                _services.CreateCountDown(countDown.Id,Title[i], LangCode[i], SEO[i], Count);
             }
 
 

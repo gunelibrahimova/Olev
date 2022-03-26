@@ -20,7 +20,8 @@ namespace Services
 
         public List<CaseLanguage> GetAll()
         {
-            var casee = _context.caseLanguages.Include(x => x.Case).Where(x => x.LangCode == "Az").ToList();
+            var test = _context.cases.ToList();
+            var casee = _context.caseLanguages.Include(x => x.Case).Where(x => x.LangCode == "AZ").ToList();
             return casee;
         }
 

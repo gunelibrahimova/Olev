@@ -32,11 +32,11 @@
                             <p>Title</p>
                             <input class="form-control mb-2" name="Title" value="@item.Title" />
                             <p>Description</p>
+                            <textarea id="editor-@count" class="form-control mb-2" name="Description">@item.Description</textarea>
                             <p>Name</p>
                             <input class="form-control mb-2" name="Name" />
                             <p>Job</p>
                             <input class="form-control mb-2" name="Job" />
-                            <textarea id="editor-@count" class="form-control mb-2" name="Description">@item.Description</textarea>
                             <input type="hidden" name="LangCode" value="@item.LangCode" />
                             <input type="hidden" name="LangID" value=@item.Id />
 

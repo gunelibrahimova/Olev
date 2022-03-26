@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "o2ew/SQh1Oxrcjjvl0PuV7s+8/13CSmUzkQ7VSoWiyU=",
+  "Hash": "lJ2+rw16OfgkbL+nqM4WC7dHA2fWbx+RpRq5w3nYX0s=",
   "Source": "K205Oleev",
   "BasePath": "_content/K205Oleev",
   "Mode": "Default",
@@ -34714,6 +34714,23 @@
       "OriginalItemSpec": "wwwroot\\files\\1868c585-cbf7-45de-a310-d5d9c650ee91Без названия.jfif"
     },
     {
+      "Identity": "C:\\Users\\HP\\Desktop\\Tasks\\K205Oleev\\K205Oleev\\wwwroot\\files\\27a388b2-f732-40f5-974a-bcd1d858916fpexels-photo-1461974.jpeg",
+      "SourceId": "K205Oleev",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\Tasks\\K205Oleev\\K205Oleev\\wwwroot\\",
+      "BasePath": "_content/K205Oleev",
+      "RelativePath": "files/27a388b2-f732-40f5-974a-bcd1d858916fpexels-photo-1461974.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\27a388b2-f732-40f5-974a-bcd1d858916fpexels-photo-1461974.jpeg"
+    },
+    {
       "Identity": "C:\\Users\\HP\\Desktop\\Tasks\\K205Oleev\\K205Oleev\\wwwroot\\files\\287d3a09-5e39-4a85-89b6-12e5d13666fbБез названия.jfif",
       "SourceId": "K205Oleev",
       "SourceType": "Discovered",
@@ -34746,6 +34763,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\files\\2ef05a48-5714-4fa6-ab89-29aecf43c0ccБез названия.jfif"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\Tasks\\K205Oleev\\K205Oleev\\wwwroot\\files\\30a0a8f9-26b8-4769-a2d4-8581a272c1deБез названия.jfif",
+      "SourceId": "K205Oleev",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\Tasks\\K205Oleev\\K205Oleev\\wwwroot\\",
+      "BasePath": "_content/K205Oleev",
+      "RelativePath": "files/30a0a8f9-26b8-4769-a2d4-8581a272c1deБез названия.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\30a0a8f9-26b8-4769-a2d4-8581a272c1deБез названия.jfif"
     },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\Tasks\\K205Oleev\\K205Oleev\\wwwroot\\files\\327676eb-8c39-4a94-8e2e-66376bd108b8Без названия.jfif",
@@ -34899,6 +34933,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\files\\5d4552df-1b1f-4a9b-beea-4779c5583f36pexels-photo-1461974.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\Tasks\\K205Oleev\\K205Oleev\\wwwroot\\files\\6307b799-5946-4ce1-8ef0-11e5d1ad467dtestimonials-2.jpg",
+      "SourceId": "K205Oleev",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\Tasks\\K205Oleev\\K205Oleev\\wwwroot\\",
+      "BasePath": "_content/K205Oleev",
+      "RelativePath": "files/6307b799-5946-4ce1-8ef0-11e5d1ad467dtestimonials-2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\6307b799-5946-4ce1-8ef0-11e5d1ad467dtestimonials-2.jpg"
     },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\Tasks\\K205Oleev\\K205Oleev\\wwwroot\\files\\6c90e053-761a-44b5-92bb-6940c081fdbeБез названия.jfif",
@@ -35088,6 +35139,40 @@
       "OriginalItemSpec": "wwwroot\\files\\bc94518b-081e-447f-9e3a-c93b70732e74Без названия.jfif"
     },
     {
+      "Identity": "C:\\Users\\HP\\Desktop\\Tasks\\K205Oleev\\K205Oleev\\wwwroot\\files\\bf88b897-e786-4dcd-91e9-4e0934c609bdtestimonials-1.jpg",
+      "SourceId": "K205Oleev",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\Tasks\\K205Oleev\\K205Oleev\\wwwroot\\",
+      "BasePath": "_content/K205Oleev",
+      "RelativePath": "files/bf88b897-e786-4dcd-91e9-4e0934c609bdtestimonials-1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\bf88b897-e786-4dcd-91e9-4e0934c609bdtestimonials-1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\Tasks\\K205Oleev\\K205Oleev\\wwwroot\\files\\c6dfe185-0e35-4063-9abf-449446b86125pexels-photo-1461974.jpeg",
+      "SourceId": "K205Oleev",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\Tasks\\K205Oleev\\K205Oleev\\wwwroot\\",
+      "BasePath": "_content/K205Oleev",
+      "RelativePath": "files/c6dfe185-0e35-4063-9abf-449446b86125pexels-photo-1461974.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\c6dfe185-0e35-4063-9abf-449446b86125pexels-photo-1461974.jpeg"
+    },
+    {
       "Identity": "C:\\Users\\HP\\Desktop\\Tasks\\K205Oleev\\K205Oleev\\wwwroot\\files\\d0aef4b8-d6b7-4c45-8f11-7771b96b8c73Без названия.jfif",
       "SourceId": "K205Oleev",
       "SourceType": "Discovered",
@@ -35137,6 +35222,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\files\\dc60e325-a83c-489d-8e11-83919c4290a6Ekran Görüntüsü (28).png"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\Tasks\\K205Oleev\\K205Oleev\\wwwroot\\files\\e1d54e21-0063-4c8a-b85f-5c4ec293f045testimonials-2.jpg",
+      "SourceId": "K205Oleev",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\Tasks\\K205Oleev\\K205Oleev\\wwwroot\\",
+      "BasePath": "_content/K205Oleev",
+      "RelativePath": "files/e1d54e21-0063-4c8a-b85f-5c4ec293f045testimonials-2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\e1d54e21-0063-4c8a-b85f-5c4ec293f045testimonials-2.jpg"
     },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\Tasks\\K205Oleev\\K205Oleev\\wwwroot\\files\\e5c5783d-e77c-45cc-93dc-1a157595bde9Без названия.jfif",

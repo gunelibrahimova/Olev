@@ -25,22 +25,23 @@ namespace Services
             return countdown;
         }
 
-        public void CreateCountDown(string Title,string LangCode, string SEO, int Count)
+        public CountDown Ccreate(CountDown countDown)
         {
-            CountDown countDown = new()
-            {
-                Count = Count,
-                CreatedDate = DateTime.Now,
-            };
             _context.countdowns.Add(countDown);
             _context.SaveChanges();
+            return countDown;
+        }
+
+        public void CreateCountDown( int CountDownID,string Title,string LangCode, string SEO, int Count)
+        {
+           
 
                 CountDownLanguage countDownLanguage = new()
                 {
                     Title = Title,
                     LangCode = LangCode,
                     SEO = SEO,
-                    CountDownID = countDown.Id
+                    CountDownID = CountDownID
                    
                 };
                 _context.countDownLanguages.Add(countDownLanguage);

@@ -30,7 +30,7 @@ namespace K205Oleev.Areas.admin.Controllers
             var about = _services.GetAll(langCode);
 
 
-            if(about != null)
+            if(about.Count > 0)
             {
                 ViewBag.Sayi = 1;
             }
@@ -47,6 +47,15 @@ namespace K205Oleev.Areas.admin.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            var langCode = Request.Cookies["Language"];
+            var about = _services.GetAll(langCode);
+
+
+            if (about.Count > 0)
+            {
+                return RedirectToAction("Index");
+            }
+
             return View();
 
         }
